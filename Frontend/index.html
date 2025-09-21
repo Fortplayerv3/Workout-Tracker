@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Workout Tracker</h1>
+        <section id="auth">
+             <div id="loginForm" class="visible">
+            <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+            <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+            <a href=""><p><u>Forget your password?</u></p></a>
+            <div id="loginError" class="error" style="color:red; display:none;"></div>
+            <button type="submit" id="loginBtn">Login</button>
+            <div>
+                <p>Don&apos;t have an account?</p>
+                <button id="authBtn"><u><b>Sign up!</b></u></button>
+            </div>
+            </div>
+            <hr />
+            <div id="registerForm" class="hidden">
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+            <input type="email" id="registerEmail" name="email" placeholder="Email" required>
+            <input type="password" id="registerPassword" name="password" placeholder="Password" required>
+             <div id="registerError" class="error" style="color:red; display:none;"></div>
+            <button type="submit" id="registerBtn">Register</button>
+            <div>
+                <p>Already have an account?</p>
+                <button id="authBtn_two"><u><b>Login!</b></u></button>
+            </div>
+        </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
+
