@@ -8,13 +8,16 @@
     </head>
     <body>
         <h1>Workout Tracker</h1>
+
+        <!--Auth Section-->
         <section id="auth">
              <div id="loginForm" class="visible">
             <input type="email" id="loginEmail" name="email" placeholder="Email" required>
             <input type="password" id="loginPassword" name="password" placeholder="Password" required>
-            <a href=""><p><u>Forget your password?</u></p></a>
+            <a href="#"><p><u>Forget your password?</u></p></a>
             <div id="loginError" class="error" style="color:red; display:none;"></div>
-            <button type="submit" id="loginBtn">Login</button>
+            <button id="loginBtn">Login</button>
+
             <div>
                 <p>Don&apos;t have an account?</p>
                 <button id="authBtn"><u><b>Sign up!</b></u></button>
@@ -27,13 +30,84 @@
             <input type="email" id="registerEmail" name="email" placeholder="Email" required>
             <input type="password" id="registerPassword" name="password" placeholder="Password" required>
              <div id="registerError" class="error" style="color:red; display:none;"></div>
-            <button type="submit" id="registerBtn">Register</button>
+            <button id="registerBtn">Register</button>
             <div>
                 <p>Already have an account?</p>
                 <button id="authBtn_two"><u><b>Login!</b></u></button>
             </div>
         </div>
         </section>
+
+        <!--Dashboard-->
+<section id="dashboard">
+<h1>Workout Dashboard</h1>
+<button id="logoutBtn">Logout</button>
+<button id="calendarBtn" class="calendarBtn" onclick="seeDate()">Date</button>
+<div id="calendarPopup" class="calendarPopup">  
+<input type="date" id="datePicker" />
+</div>
+<main>
+<div id="workoutInfo"></div>
+</main>
+</section>
+
+<!--Workout List-->
+<section id="overlay" class="overlay">
+            <div class="popup">
+                <p>Workout Name</p>
+                <input type="text" id="workoutName" name="workoutName" placeholder="Add a Workout Name..." >
+                <p>Type of Workout</p>
+                <input type="text" id="workoutType" name="workoutType" placeholder="What are we doing Today...">
+                <p>Day</p>
+                <select id="day" name="day" required>
+                    <option value="">-- Select a day --</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+                <p>Notes</p>
+                <input type="text" id="workoutNotes" name="workoutNotes" placeholder="Add notes">
+                <button id="workoutCreateBtn">Create a Workout</button>
+                <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+            </section>
+
+            <!--Exercise Adding Section-->
+            <section id="overlay_exercise" class="overlay_exercise">
+                <div class="popup">
+                    <p>Select any exercise</p>
+                    <select id="exerciseDropdown">
+                        <option value="">-- Select an exercise --</option>
+                    </select>
+                    <p>Focus Area</p>
+                    <input type="text" id="focusArea" name="focusArea">
+                    <p>Reps</p>
+                    <input type="number" id="Reps" name="Reps" required>
+                    <p>Sets</p>
+                    <input type="number" id="Sets" name="Sets" required>
+                    <p>Weight</p>
+                    <input type="number" id="Weight" name="Weight">
+                    <p>Notes</p>
+                    <input type="text" id="Notes" name="Notes">
+                    <button type="submit" id="addExerciseBtn" onclick="exerciseList()">Add the Exercise</button>
+                </div>
+            </section>
+
+            <!--Exercise List Count-->
+            <section id="overlay_exercise_list" class="overlay_exercise_list">
+                <div class="popup">
+                    <p>Exercises:</p>
+                    <div id="exerciseList"></div>
+                    <button onclick="loadExercises()">Add more exercises!</button>
+                    <button class="close-btn" onclick="closeExerciseListPopup()">Close</button>
+                </div>
+            </section>
+
+            <button id="workoutButton" onclick="openPopup()" >+</button>
         <script src="script.js"></script>
     </body>
 </html>

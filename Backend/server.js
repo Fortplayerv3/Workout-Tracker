@@ -2,7 +2,7 @@ import express from 'express'
 import path , { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import authRoutes from './routes/authRoutes.js'
-//import workoutRoutes from './routes/workoutRoutes.js'
+import workoutRoutes from './routes/workoutRoutes.js'
 import middleware from './middleware/middleware.js'
 
 const app = express()
@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
 
 //Routes
 app.use('/auth',authRoutes);
-//app.use('/workouts',middleware,workoutRoutes)
+app.use('/workouts',middleware,workoutRoutes)
 
 
 app.listen(PORT,()=>{

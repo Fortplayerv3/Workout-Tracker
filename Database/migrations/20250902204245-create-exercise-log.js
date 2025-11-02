@@ -29,6 +29,10 @@ export async function up(queryInterface, Sequelize) {
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
     },
+     exerciseName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+     },
     reps: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -37,12 +41,12 @@ export async function up(queryInterface, Sequelize) {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    focusArea: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     weight: {
       type: DataTypes.FLOAT,
-      allowNull: true,
-    },
-    duration: {
-      type: DataTypes.INTEGER,
       allowNull: true,
     },
     notes: {

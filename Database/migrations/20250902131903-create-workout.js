@@ -20,15 +20,14 @@ import { DataTypes } from 'sequelize';
       },
       date: {
         allowNull:false,
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+        type: DataTypes.STRING,
+      },
+      workoutName:{
+        allowNull: false,
+        type: DataTypes.STRING,
       },
       workoutType: {
         type: DataTypes.STRING,
-        allowNull: true,
-      },
-      duration: {
-        type: DataTypes.INTEGER,
         allowNull: true,
       },
       notes: {

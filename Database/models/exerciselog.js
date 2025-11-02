@@ -18,20 +18,24 @@ const exerciseLog = sequelize.define('exerciseLogs',
         type: DataTypes.INTEGER,
         allowNull:false,
       },
+      exerciseName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
       reps: {
         type: DataTypes.INTEGER,
         allowNull:false,
       },
       sets: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,                  
         allowNull:false,
       },
+      focusArea: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
       weight: {
         type: DataTypes.FLOAT,
-        allowNull:true,
-      },
-      duration: {
-        type: DataTypes.INTEGER,
         allowNull:true,
       },
       notes: {
@@ -61,7 +65,7 @@ const exerciseLog = sequelize.define('exerciseLogs',
     }
 );
 
-//Associations
+//Associations 
 exerciseLog.belongsTo(Workout,{foreignKey:'workoutId'});
 Workout.hasMany(exerciseLog,{foreignKey:'workoutId'});
 
